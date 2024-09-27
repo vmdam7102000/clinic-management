@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart with Axis Titles</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include Chart.js -->
+    <style>
+        /* Style to make cursor larger */
+        canvas {
+            cursor: pointer; /* Change the cursor to pointer when hovering */
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="padding-top: 50px;">
+        <h3 class="text-center"><b>HỒ SƠ BỆNH ÁN</b></h3>
+        
+        <!-- Chart Container -->
+        <canvas id="diseaseChart"></canvas>
+
+        <script>
+            // Data from Handlebars
+            const labels = [];
+            const dataValues = [];
+
+            {{#each records}}
+                labels.push("{{{_id}}}");
+                dataValues.push("{{patientCount}}");
+            {{/each}}
+
+            // Chart.js code
+            new Chart(document.getElementById('diseaseChart'), {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: dataValues,
+                        backgroundColor: 'lightblue'
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: {
+                            ticks: {
+                                font: {
+                                    size: 25 // Increase font size for labels (disease names)
+                                }
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Số lượng bệnh nhân', // Label for the y-axis
+                                font: {
+                                    size: 25 // Font size for the y-axis label
+                                }
+                            },
+                            beginAtZero: true,
+                            ticks: {
+                                precision: 0 // Ensure no decimal places
+                            }
+                        }
+                    },
+                    hover: {
+                        onHover: function(e) {
+                            // Enlarge cursor on hover
+                            const point = this.getElementsAtEventForMode(e, 'nearest', { intersect: true }, false);
+                            e.native.target.style.cursor = point.length ? 'pointer' : 'default';
+                        }
+                    }
+                }
+            });
+        </script>
+    </div>
+</body>
+</html>

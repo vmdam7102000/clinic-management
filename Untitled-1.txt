@@ -1,0 +1,54 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table Doctor {
+  _id ObjectId()
+  id_number str
+  name str
+  doctor_id str
+  bod date
+  address str
+  job_level str
+  years_of_experience int
+  qualification str
+  specialty str
+}
+
+Table Nurse {
+  _id ObjectId()
+  id_number str
+  nurse_id str
+  qualification str
+  years_of_experience int
+  bod date
+  address str
+  phone_number str
+}
+
+
+Table Patient {
+_id ObjectId()
+id_number str
+patient_id str
+birth_date date
+address str
+phone_number str
+}
+
+Table Visit {
+  _id ObjectId()
+  patient_id str
+  entry_date date
+  discharge_date date
+  disease_name str
+  visit_id str
+  total_treatment_cost decimal
+  doctor_id str
+  nurse_ids "[str]"
+}
+
+Table prescriptions {
+  _id ObjectId()
+  visit_id str
+  medications "medication_name str price decimal"
+}

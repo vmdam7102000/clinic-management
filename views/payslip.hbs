@@ -1,0 +1,27 @@
+<div class="container">
+    <h3 class="text-center mt-2"><b>HỒ SƠ BỆNH ÁN</b></h3>
+    <table id="example" class="table table-striped" style="width:100%;background-color: aliceblue;">
+        <thead>
+            <tr>
+                <th>Tên bệnh</th>
+                <th>Số bệnh nhân mắc</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each records}}
+            <tr>
+                <td>{{_id}}</td>
+                <td>{{patientCount}}</td>
+                <td>{{AllTotal}}</td>
+            </tr>
+            {{/each}}
+        <tfoot>
+            <tr>
+               <th>Tên bệnh</th>
+                <th>Số bệnh nhân mắc</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+
