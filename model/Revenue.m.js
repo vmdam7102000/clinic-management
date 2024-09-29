@@ -25,7 +25,8 @@ module.exports = {
                     DoctorName: 1,                 // Doctor's name
                     entry_date: 1,                 // Entry date
                     discharge_date: 1,             // Discharge date
-                    AllTotal: { $toDouble: "$AllTotal" },  // Convert AllTotal to double
+                    AllTotal: 1,
+                    AllTotalNumber: { $toDouble: "$AllTotal" },  // Convert AllTotal to double
                     month: { $substr: ["$discharge_date", 5, 2] },  // Extract month from discharge_date (YYYY-MM-DD)
                     year: { $substr: ["$discharge_date", 0, 4] }    // Extract year from discharge_date (YYYY-MM-DD)
                 }
@@ -50,7 +51,8 @@ module.exports = {
                             DoctorName: "$DoctorName",   // Doctor's name
                             entry_date: "$entry_date",   // Entry date for the visit
                             discharge_date: "$discharge_date",  // Discharge date for the visit
-                            AllTotal: "$AllTotal"        // Total amount for the visit
+                            AllTotal: "$AllTotal",
+                            AllTotalNumber: "$AllTotal"        // Total amount for the visit
                         }
                     }
                 }
@@ -67,7 +69,8 @@ module.exports = {
                     DoctorName: detail.DoctorName,        // Doctor's name
                     entry_date: detail.entry_date,        // Entry date for the visit
                     discharge_date: detail.discharge_date, // Discharge date for the visit
-                    AllTotal: detail.AllTotal             // Total amount for the visit
+                    AllTotal: detail.AllTotal,             // Total amount for the visit
+                    AllTotalNumber: detail.AllTotalNumber
                 }))
             };
         } else {
@@ -111,28 +114,12 @@ module.exports = {
                             Diagnosis: "$Diagnosis",       // Disease/Diagnosis
                             entry_date: "$entry_date",     // Entry date of the patient
                             discharge_date: "$discharge_date",  // Discharge date of the patient
-                            medical_status: "$medical_status"
+                            medical_status: "$medical_status",
+                            AllTotal: "$AllTotal"
                         }
                     }
                 }
             }
-            // ,
-            // {
-            //     // Calculate the salary: base salary + 1,000,000 VND for each recovered patient
-            //     $project: {
-            //         _id: 0,
-            //         totalRevenue: "$totalRevenue",
-            //         DoctorName: "$_id.DoctorName",
-            //         totalPatients: "$totalPatients",
-            //         salary: { 
-            //             $add: [
-            //                 7000000,                     // Base salary
-            //                 { $multiply: [1000000, "$recoveredPatients"] } // Bonus for recovered patients
-            //             ]
-            //         },
-            //         details: 1                         // Include the MedicalHistory details
-            //     }
-            // }
         ]).toArray();
     
         return rs;
