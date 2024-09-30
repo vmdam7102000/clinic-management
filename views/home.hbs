@@ -1,390 +1,589 @@
-<!-- Hero Start -->
-<div class="container-fluid bg-info py-5 mb-5 hero-header">
-    <div class="container py-5">
-        <div class="row justify-content-start">
-            <div class="col-lg-8 text-center text-lg-start">
-                <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5"
-                    style="border-color: rgba(256, 256, 256, .3) !important;"><b>Welcome To GROUP21</b></h5>
-                <h1 class="display-1 text-white mb-md-4"><b>Phòng Khám Đa Khoa Tốt Nhất Hiện Nay</b></h1>
-                <div class="pt-2">
-                    <a href="/tim-kiem/bac-si" class="btn btn-light rounded-pill py-md-3 px-md-5 mx-2">Tìm bác sĩ</a>
-                    <a href="/tai-lieu/lap-phieu-hen"
-                        class="btn btn-outline-light rounded-pill py-md-3 px-md-5 mx-2">Lập phiếu hẹn</a>
+    <head>
+    <meta charset="utf-8">
+    <title>Klinik - Clinic Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+    
+    
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="d-flex flex-column">
+                        <img class="img-fluid rounded w-75 align-self-end" src="img/about-1.jpg" alt="">
+                        <img class="img-fluid rounded w-50 bg-white pt-3 pe-3" src="img/about-2.jpg" alt="" style="margin-top: -25%;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <p class="d-inline-block border rounded-pill py-1 px-4">Giới thiệu về chúng tôi</p>
+                    <h1 class="mb-4">Tại sao bạn nên tin tưởng chúng tôi?</h1>
+                    <p>Chúng tôi hiểu rằng sức khỏe là tài sản quý giá nhất của con người. Chính vì thế, bệnh viện luôn đặt lợi ích và sự an toàn của bệnh nhân lên hàng đầu. Chúng tôi không ngừng nỗ lực để cải tiến chất lượng dịch vụ và phát triển những phương pháp điều trị tiên tiến nhất, nhằm mang đến cho bệnh nhân trải nghiệm chăm sóc y tế tốt nhất.</p>
+                    {{!-- <p class="mb-4">Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam rebum amet diam ipsum. Clita clita labore, dolor duo nonumy clita sit at, sed sit sanctus dolor eos.</p> --}}
+                    <p><i class="far fa-check-circle text-primary me-3"></i>Dịch vụ chăm sóc sức khỏe chất lượng</p>
+                    <p><i class="far fa-check-circle text-primary me-3"></i>Đội ngũ bác sĩ và chuyên gia hàng đầu</p>
+                    <p><i class="far fa-check-circle text-primary me-3"></i>Nghiên cứu y học hiện đại</p>
+                    <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="">Xem thêm</a>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Hero End -->
+    <!-- About End -->
 
 
-<!-- About Start -->
-<div class="container-fluid py-5">
-    <div class="container">
-        <div class="row gx-5">
-            <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
-                <div class="position-relative h-100">
-                    <img class="position-absolute w-100 h-100 rounded" src="img/about.jpg" style="object-fit: cover;">
-                </div>
+    <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block border rounded-pill py-1 px-4">Dịch vụ</p>
+                <h1>Giải pháp Chăm sóc Sức khỏe</h1>
             </div>
-            <div class="col-lg-7">
-                <div class="mb-4">
-                    <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Về chúng tôi</h5>
-                    <h1 class="display-4"><b>Dịch vụ chăm sóc y tế tốt nhất cho bạn và người thân</b></h1>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                            <i class="fa fa-heartbeat text-primary fs-4"></i>
+                        </div>
+                        <h4 class="mb-3">Tim mạch</h4>
+                        <p class="mb-4">Chuyên khoa Tim mạch của chúng tôi đảm bảo chẩn đoán và điều trị hiệu quả các bệnh lý về tim mạch.</p>
+                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Xem thêm</a>
+                    </div>
                 </div>
-                <p>Phòng khám đa khoa Group21 được thành lập năm 2077 với niềm tự hào là một trong những Phòng khám điện
-                    tử theo tiêu chuẩn quốc tế đầu tiên tại Việt Nam được đầu tư trang thiết bị tiên tiến và hiện đại.
-
-                    Với hệ thống quản lý hồ sơ điện tử, khách hàng xem được toàn bộ kết quả khám và xét nghiệm sau 24h
-                    trên Internet nhưng vẫn đảm bảo bí mật kết quả khám tuyệt đối. Việc ứng dụng quản trị hồ sơ điện tử
-                    sẽ tiết kiệm thời gian và giảm sự chờ đợi của khách hàng khi đến khám. Toàn bộ kết quả xét nghiệm
-                    được chạy bằng hóa chất của chính hãng, không gửi mẫu xét nghiệm ra bên ngoài, không làm quick test.
-
-                    Dựa trên uy tín, chất lượng đã tạo dựng, Phòng khám đa khoa Group21 tin tưởng sẽ trở thành nơi bạn
-                    gửi trọn niềm tin trong việc chăm sóc sức khỏe của bản thân và gia đình bạn.</p>
-                <div class="row g-3 pt-3">
-                    <div class="col-sm-3 col-6">
-                        <div class="bg-light text-center rounded-circle py-4">
-                            <i class="fa fa-3x fa-user-md text-primary mb-3"></i>
-                            <h6 class="mb-0 text-primary">Bác sĩ<small class="d-block text-dark">Kinh nghiệm</small>
-                            </h6>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                            <i class="fa fa-x-ray text-primary fs-4"></i>
                         </div>
+                        <h4 class="mb-3">Hô hấp</h4>
+                        <p class="mb-4">Khoa Hô hấp chuyên cung cấp các dịch vụ điều trị các bệnh về phổi và hệ hô hấp, từ viêm phổi, hen suyễn đến các bệnh lý nghiêm trọng hơn.</p>
+                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Xem thêm</a>
                     </div>
-                    <div class="col-sm-3 col-6">
-                        <div class="bg-light text-center rounded-circle py-4">
-                            <i class="fa fa-3x fa-procedures text-primary mb-3"></i>
-                            <h6 class="mb-0 text-primary">Dịch vụ<small class="d-block text-dark">Khẩn cấp</small></h6>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                            <i class="fa fa-brain text-primary fs-4"></i>
                         </div>
+                        <h4 class="mb-3">Thần kinh</h4>
+                        <p class="mb-4">Chúng tôi chuyên điều trị các bệnh lý về thần kinh, bao gồm đau đầu, động kinh, đột quỵ và các rối loạn thần kinh khác.</p>
+                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Xem thêm</a>
                     </div>
-                    <div class="col-sm-3 col-6">
-                        <div class="bg-light text-center rounded-circle py-4">
-                            <i class="fa fa-3x fa-microscope text-primary mb-3"></i>
-                            <h6 class="mb-0 text-primary">Xét nghiệm<small class="d-block text-dark">Chuẩn xác</small>
-                            </h6>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                            <i class="fa fa-wheelchair text-primary fs-4"></i>
                         </div>
+                        <h4 class="mb-3">Chấn thương chỉnh hình</h4>
+                        <p class="mb-4">Khoa Chấn thương chỉnh hình của chúng tôi cung cấp các dịch vụ điều trị các chấn thương xương khớp và các bệnh lý về cơ xương khớp.</p>
+                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Xem thêm</a>
                     </div>
-                    <div class="col-sm-3 col-6">
-                        <div class="bg-light text-center rounded-circle py-4">
-                            <i class="fa fa-3x fa-ambulance text-primary mb-3"></i>
-                            <h6 class="mb-0 text-primary">Xe cứu thương<small class="d-block text-dark">Miễn phí</small>
-                            </h6>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                            <i class="fa fa-tooth text-primary fs-4"></i>
                         </div>
+                        <h4 class="mb-3">Phẫu thuật nha khoa</h4>
+                        <p class="mb-4">Với các dịch vụ phẫu thuật nha khoa chuyên nghiệp, chúng tôi giúp bệnh nhân khắc phục các vấn đề về răng miệng, từ nhổ răng khôn đến cấy ghép răng và điều trị nha khoa thẩm mỹ.</p>
+                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Xem thêm</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                            <i class="fa fa-vials text-primary fs-4"></i>
+                        </div>
+                        <h4 class="mb-3">Xét nghiệm</h4>
+                        <p class="mb-4">Phòng xét nghiệm của chúng tôi được trang bị các thiết bị hiện đại, đảm bảo kết quả nhanh chóng và chính xác cho các chẩn đoán bệnh lý. Đây là cơ sở quan trọng để đưa ra các phương án điều trị hiệu quả.</p>
+                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Xem thêm</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- About End -->
-
-<!-- Medical examination process Start -->
-<div class="container-fluid py-5">
-    <div class="mb-4 ms-4">
-        <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Hướng dẫn</h5>
-        <h1 class="display-4"><b>Quy trình khám bệnh tại phòng khám</b></h1>
-    </div>
-    <img src="img/quy-trinh-kham-benh.png" alt="" class="process-img text-center">
-</div>
-<!-- Medical examination process End -->
-
-<!-- Services Start -->
-<div class="container-fluid py-5">
-    <div class="container">
-        <div class="text-center mx-auto mb-5" style="max-width: 500px;">
-            <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Dịch vụ</h5>
-            <h1 class="display-4">Dịch vụ y tế tốt nhất</h1>
-        </div>
-        <div class="row g-5">
-            <div class="col-lg-4 col-md-6">
-                <div
-                    class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                    <div class="service-icon mb-4">
-                        <i class="fa fa-2x fa-user-md text-white"></i>
-                    </div>
-                    <h4 class="mb-3">Chăm sóc y tế khẩn cấp</h4>
-                    <p class="m-0">Chúng tôi hỗ trợ chăm sóc y tế trong thời gian nhanh nhất, chăm sóc tận nhà</p>
-                    <a class="btn btn-lg btn-primary rounded-pill" href="#">
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div
-                    class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                    <div class="service-icon mb-4">
-                        <i class="fa fa-2x fa-procedures text-white"></i>
-                    </div>
-                    <h4 class="mb-3">Phẫu thuật</h4>
-                    <p class="m-0">Cung cấp dịch vụ chăm sóc phẫu thuật, hết mình phục vụ cho mọi bệnh nhân trong suốt
-                        quá trình từ tư vấn đến chăm sóc sau phẫu thuật. </p>
-                    <a class="btn btn-lg btn-primary rounded-pill" href="#">
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div
-                    class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                    <div class="service-icon mb-4">
-                        <i class="fa fa-2x fa-stethoscope text-white"></i>
-                    </div>
-                    <h4 class="mb-3">Khám bệnh</h4>
-                    <p class="m-0">Nỗ lực hết sức mình cùng khách hàng giữ gìn, bảo vệ sức khỏe bằng lòng yêu thương,
-                        coi sức khỏe của khách hàng như sức khỏe của bản thân</p>
-                    <a class="btn btn-lg btn-primary rounded-pill" href="#">
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div
-                    class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                    <div class="service-icon mb-4">
-                        <i class="fa fa-2x fa-ambulance text-white"></i>
-                    </div>
-                    <h4 class="mb-3">Cấp cứu</h4>
-                    <p class="m-0">Nhanh chóng, an toàn, miễn phí vì sức khỏe, tính mạng của bệnh nhân</p>
-                    <a class="btn btn-lg btn-primary rounded-pill" href="#">
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div
-                    class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                    <div class="service-icon mb-4">
-                        <i class="fa fa-2x fa-pills text-white"></i>
-                    </div>
-                    <h4 class="mb-3">Thuốc và dược phẩm</h4>
-                    <p class="m-0">cung cấp các sản phẩm thuốc và sản phẩm chăm sóc sức khỏe hàng đầu với giá thành cạnh
-                        tranh nhất</p>
-                    <a class="btn btn-lg btn-primary rounded-pill" href="#">
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div
-                    class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                    <div class="service-icon mb-4">
-                        <i class="fa fa-2x fa-microscope text-white"></i>
-                    </div>
-                    <h4 class="mb-3">Xét nghiệm</h4>
-                    <p class="m-0">Mang đến dịch vụ chăm sóc sức khỏe chuyên sâu, xét nghiệm nhanh chóng, tiện lợi và
-                        chính xác</p>
-                    <a class="btn btn-lg btn-primary rounded-pill" href="#">
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Services End -->
+    <!-- Service End -->
 
 
-<!-- Pricing Plan Start -->
-<div class="container-fluid py-5">
-    <div class="container">
-        <div class="text-center mx-auto mb-5" style="max-width: 500px;">
-            <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Các gói dịch vụ</h5>
-            <h1 class="display-4">Các chương trình</h1>
-        </div>
-        <div class="owl-carousel price-carousel position-relative" style="padding: 0 45px 45px 45px;">
-            <div class="bg-light rounded text-center">
-                <div class="position-relative">
-                    <img class="img-fluid rounded-top" src="img/price-1.jpg" alt="">
-                    <div class="position-absolute w-100 h-100 top-50 start-50 translate-middle rounded-top d-flex flex-column align-items-center justify-content-center"
-                        style="background: rgba(29, 42, 77, .8);">
-                        <h3 class="text-white">Chăm sóc thai kỳ</h3>
-                        <h1 class="display-4 text-white mb-0">
-                            <small class="align-top fw-normal"
-                                style="font-size: 22px; line-height: 45px;">VND</small>1.090.000<small
-                                class="align-bottom fw-normal" style="font-size: 16px; line-height: 40px;">/ Năm</small>
-                        </h1>
-                    </div>
-                </div>
-                <div class="text-center py-5">
-                    <p>Nhanh chóng</p>
-                    <p>Bác sĩ giàu kinh nghiệm</p>
-                    <p>Chăm sóc tận nhà</p>
-                    <p>Đảm bảo chất lượng</p>
-                    <a href="#" class="btn btn-primary rounded-pill py-3 px-5 my-2">Đăng ký</a>
-                </div>
+    <!-- Team Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block border rounded-pill py-1 px-4">Bác sĩ</p>
+                <h1>Các bác sĩ kinh nghiệm của chúng tôi</h1>
             </div>
-            <div class="bg-light rounded text-center">
-                <div class="position-relative">
-                    <img class="img-fluid rounded-top" src="img/price-2.jpg" alt="">
-                    <div class="position-absolute w-100 h-100 top-50 start-50 translate-middle rounded-top d-flex flex-column align-items-center justify-content-center"
-                        style="background: rgba(29, 42, 77, .8);">
-                        <h3 class="text-white">Kiểm tra sức khỏe định kỳ</h3>
-                        <h1 class="display-4 text-white mb-0">
-                            <small class="align-top fw-normal"
-                                style="font-size: 22px; line-height: 45px;">VND</small>2.290.000<small
-                                class="align-bottom fw-normal" style="font-size: 16px; line-height: 40px;">/ Năm</small>
-                        </h1>
-                    </div>
-                </div>
-                <div class="text-center py-5">
-                    <p>Nhanh chóng</p>
-                    <p>Bác sĩ giàu kinh nghiệm</p>
-                    <p>Chăm sóc tận nhà</p>
-                    <p>Đảm bảo chất lượng</p>
-                    <a href="#" class="btn btn-primary rounded-pill py-3 px-5 my-2">Đăng ký</a>
-                </div>
-            </div>
-            <div class="bg-light rounded text-center">
-                <div class="position-relative">
-                    <img class="img-fluid rounded-top" src="img/price-3.jpg" alt="">
-                    <div class="position-absolute w-100 h-100 top-50 start-50 translate-middle rounded-top d-flex flex-column align-items-center justify-content-center"
-                        style="background: rgba(29, 42, 77, .8);">
-                        <h3 class="text-white">Chăm sóc răng miệng</h3>
-                        <h1 class="display-4 text-white mb-0">
-                            <small class="align-top fw-normal"
-                                style="font-size: 22px; line-height: 45px;">VND</small>3.490.000<small
-                                class="align-bottom fw-normal" style="font-size: 16px; line-height: 40px;">/ Năm</small>
-                        </h1>
-                    </div>
-                </div>
-                <div class="text-center py-5">
-                    <p>Nhanh chóng</p>
-                    <p>Bác sĩ giàu kinh nghiệm</p>
-                    <p>Chăm sóc tận nhà</p>
-                    <p>Đảm bảo chất lượng</p>
-                    <a href="#" class="btn btn-primary rounded-pill py-3 px-5 my-2">Đăng ký</a>
-                </div>
-            </div>
-            <div class="bg-light rounded text-center">
-                <div class="position-relative">
-                    <img class="img-fluid rounded-top" src="img/price-4.jpg" alt="">
-                    <div class="position-absolute w-100 h-100 top-50 start-50 translate-middle rounded-top d-flex flex-column align-items-center justify-content-center"
-                        style="background: rgba(29, 42, 77, .8);">
-                        <h3 class="text-white">Tiểu phẫu và phẫu thuật</h3>
-                        <h1 class="display-4 text-white mb-0">
-                            <small class="align-top fw-normal"
-                                style="font-size: 22px; line-height: 45px;">VND</small>4.590.000<small
-                                class="align-bottom fw-normal" style="font-size: 16px; line-height: 40px;">/ Năm</small>
-                        </h1>
-                    </div>
-                </div>
-                <div class="text-center py-5">
-                    <p>Nhanh chóng</p>
-                    <p>Bác sĩ giàu kinh nghiệm</p>
-                    <p>Chăm sóc tận nhà</p>
-                    <p>Đảm bảo chất lượng</p>
-                    <a href="#" class="btn btn-primary rounded-pill py-3 px-5 my-2">Đăng ký</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Pricing Plan End -->
-
-
-<!-- Team Start -->
-<div class="container-fluid py-5">
-    <div class="container">
-        <div class="text-center mx-auto mb-5" style="max-width: 500px;">
-            <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Bác sĩ</h5>
-            <h1 class="display-4">Đội ngũ bác sĩ giỏi, giàu kinh nghiệm</h1>
-        </div>
-        <div class="owl-carousel team-carousel position-relative">
-            {{#each doctors}}
-            <div class="team-item">
-                <div class="row g-0 bg-light rounded overflow-hidden">
-                    <div class="col-12 col-sm-5 h-100">
-                        <img class="img-fluid h-100" src="img/team-{{Gender}}.jpg" style="object-fit: cover;">
-                    </div>
-                    <div class="col-12 col-sm-7 h-100 d-flex flex-column">
-                        <div class="mt-auto p-4">
-                            <h3>{{Name}}</h3>
-                            <h6 class="fw-normal fst-italic text-primary mb-4">{{Title}}</h6>
-                            <p class="m-0">Chuyên khoa {{Specialist}}</p>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/team-1.jpg" alt="">
                         </div>
-                        <div class="d-flex mt-auto border-top p-4">
-                            <p><b>Điện thoại: </b>{{Phone}}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{/each}}
-        </div>
-    </div>
-</div>
-<!-- Team End -->
-
-
-<!-- Testimonial Start -->
-<div class="container-fluid py-5">
-    <div class="container">
-        <div class="text-center mx-auto mb-5" style="max-width: 500px;">
-            <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5"><b>ĐÁNH GIÁ CỦA BỆNH NHÂN</b>
-            </h5>
-            <h1 class="display-4">Các bệnh nhân nói gì về dịch vụ của chúng tôi?</h1>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="owl-carousel testimonial-carousel">
-                    <div class="testimonial-item text-center">
-                        <div class="position-relative mb-5">
-                            <img class="img-fluid rounded-circle mx-auto" src="img/testimonial-1.jpg" alt=""
-                                style="max-width: fit-content;min-height: fit-content;">
-                            <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle"
-                                style="width: 60px; height: 60px;">
-                                <i class="fa fa-quote-left fa-2x text-primary"></i>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Doctor A</h5>
+                            <p class="text-primary">Khoa Tim Mạch</p>
+                            <div class="team-social text-center">
+                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
-                        <p class="fs-4 fw-normal">Vợ tôi mang thai tới tháng thứ 5 rồi nên việc đi bệnh viện khám thai
-                            phải chờ đợi khá mệt mỏi. Mỗi lần đi khám là tới nơi bóc số rồi chờ mất khoảng nửa ngày
-                            trời. Cũng may bà xã mình nghe nhỏ bạn nói ra ngoài cơ sở y tế tư nhân khám cho nhanh nên
-                            mình dẫn vợ qua phòng khám trải nghiệm thử luôn. Đúng là nhanh hơn đi bệnh viện gấp trăm lần
-                            luôn. Tới nơi làm thủ tục rồi là vô gặp bác sĩ liền luôn. Sau đó ngồi chờ kết quả và nghe
-                            bác sĩ tư vấn, tổng cộng chỉ mất khoảng nửa tiếng à.</p>
-                        <hr class="w-25 mx-auto">
-                        <h3>Uchiha Sasuke</h3>
-                        <h6 class="fw-normal text-primary mb-3">Lập trình viên IT</h6>
                     </div>
-                    <div class="testimonial-item text-center">
-                        <div class="position-relative mb-5">
-                            <img class="img-fluid rounded-circle mx-auto" src="img/testimonial-2.jpg" alt=""
-                                style="max-width: fit-content;min-height: fit-content;">
-                            <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle"
-                                style="width: 60px; height: 60px;">
-                                <i class="fa fa-quote-left fa-2x text-primary"></i>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/team-2.jpg" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Doctor B</h5>
+                            <p class="text-primary">Khoa Thần Kinh</p>
+                            <div class="team-social text-center">
+                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
-                        <p class="fs-4 fw-normal">Mình bị mắc phải bệnh khó nói ra, mà đi bệnh viện thì sợ gặp người
-                            quen với lại đông đúc nữa. Nên mình quyết định đi tìm địa chỉ khám bệnh tư nhân cho chắc ăn.
-                            Lên mạng tìm đại luôn, thì mình thấy phòng khám này giới thiệu hay nè, nên quyết định chọn
-                            đến phòng khám thăm khám luôn coi thế nào. Vào đến đây khám thì thấy mọi thứ quả thật đúng
-                            như mình mong đợi luôn. Cơ sở vật chất khang trang, bác sĩ với y tá ai nấy cũng đều nhiệt
-                            tình. Kết ở phòng khám này là đặt hẹn lấy số trước, vô là gặp bác sĩ liền không cần phải chờ
-                            đợi lâu.</p>
-                        <hr class="w-25 mx-auto">
-                        <h3>Uzumaki Naruto</h3>
-                        <h6 class="fw-normal text-primary mb-3">Phi công</h6>
                     </div>
-                    <div class="testimonial-item text-center">
-                        <div class="position-relative mb-5">
-                            <img class="img-fluid rounded-circle mx-auto" src="img/testimonial-3.jpg" alt=""
-                                style="max-width: fit-content;min-height: fit-content;">
-                            <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle"
-                                style="width: 60px; height: 60px;">
-                                <i class="fa fa-quote-left fa-2x text-primary"></i>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/team-3.jpg" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Doctor C</h5>
+                            <p class="text-primary">Khoa Nhi</p>
+                            <div class="team-social text-center">
+                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
-                        <p class="fs-4 fw-normal">Mình rất ngại kiểu khám bệnh cọc cằn, nạt nộ bệnh nhân nên mình thường
-                            lựa chọn phòng khám tư nhân. May mắn được biết đến Group21, nhân viên thì nhiệt tình, bác sĩ
-                            thì khám kỹ mà còn dễ thương. Ấn tượng đầu tiên là phòng khám vừa sạch sẽ vừa hiện đại, mới
-                            tới được nhân viên tại đó hướng dẫn tận tình lắm. Được biết là bác sĩ cũng công tác tại mấy
-                            bệnh viện lớn nữa nên mấy bạn yên tâm nha</p>
-                        <hr class="w-25 mx-auto">
-                        <h3>Haruno Sakura</h3>
-                        <h6 class="fw-normal text-primary mb-3">Nhân viên văn phòng</h6>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/team-4.jpg" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Doctor D</h5>
+                            <p class="text-primary">Khoa Phục Hồi Chức Năng</p>
+                            <div class="team-social text-center">
+                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Testimonial End -->
+    <!-- Team End -->
+
+
+    <!-- Testimonial Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block border rounded-pill py-1 px-4">Lời chia sẻ từ bệnh nhân</p>
+                <h1>Những gì bệnh nhân nói về chúng tôi!</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                <div class="testimonial-item text-center">
+                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="img/testimonial-1.jpg" style="width: 100px; height: 100px;">
+                    <div class="testimonial-text rounded text-center p-4">
+                        <p>Dịch vụ chăm sóc tại bệnh viện thật tuyệt vời. Tôi được điều trị bởi đội ngũ bác sĩ chuyên môn cao và tận tình. Tôi cảm thấy rất an tâm và hài lòng với chất lượng dịch vụ tại đây.</p>
+                        <h5 class="mb-1">Chị Lan</h5>
+                        <span class="fst-italic">Bệnh nhân tim mạch</span>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center">
+                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="img/testimonial-2.jpg" style="width: 100px; height: 100px;">
+                    <div class="testimonial-text rounded text-center p-4">
+                        <p>Bệnh viện có trang thiết bị hiện đại và quy trình khám chữa bệnh nhanh chóng, không mất nhiều thời gian chờ đợi. Tôi đã hoàn toàn bình phục sau khi được điều trị tại đây.</p>
+                        <h5 class="mb-1">Anh Minh</h5>
+                        <span class="fst-italic">Bệnh nhân chấn thương chỉnh hình</span>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center">
+                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="img/testimonial-3.jpg" style="width: 100px; height: 100px;">
+                    <div class="testimonial-text rounded text-center p-4">
+                        <p>Phòng xét nghiệm rất hiện đại, kết quả trả về nhanh chóng và chính xác. Điều này giúp bác sĩ đưa ra phác đồ điều trị kịp thời, hiệu quả.</p>
+                        <h5 class="mb-1">Anh Dũng</h5>
+                        <span class="fst-italic">Bệnh nhân xét nghiệm</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    
+
+
+<style>
+    :root {
+    --primary: #0463FA;
+    --light: #EFF5FF;
+    --dark: #1B2C51;
+    }
+
+    .fw-medium {
+        font-weight: 500 !important;
+    }
+
+    .fw-bold {
+        font-weight: 700 !important;
+    }
+
+    .fw-black {
+        font-weight: 900 !important;
+    }
+
+    .back-to-top {
+        position: fixed;
+        display: none;
+        right: 45px;
+        bottom: 45px;
+        z-index: 99;
+    }
+
+
+    /*** Spinner ***/
+    #spinner {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .5s ease-out, visibility 0s linear .5s;
+        z-index: 99999;
+    }
+
+    #spinner.show {
+        transition: opacity .5s ease-out, visibility 0s linear 0s;
+        visibility: visible;
+        opacity: 1;
+    }
+
+
+    /*** Button ***/
+    .btn {
+        font-weight: 500;
+        transition: .5s;
+    }
+
+    .btn.btn-primary,
+    .btn.btn-secondary {
+        color: #FFFFFF;
+    }
+
+    .btn-square {
+        width: 38px;
+        height: 38px;
+    }
+
+    .btn-sm-square {
+        width: 32px;
+        height: 32px;
+    }
+
+    .btn-lg-square {
+        width: 48px;
+        height: 48px;
+    }
+
+    .btn-square,
+    .btn-sm-square,
+    .btn-lg-square {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: normal;
+    }
+    :root {
+        --primary: #0463FA;
+        --light: #EFF5FF;
+        --dark: #1B2C51;
+    }
+
+    .fw-medium {
+        font-weight: 500 !important;
+    }
+
+    .fw-bold {
+        font-weight: 700 !important;
+    }
+
+    .fw-black {
+        font-weight: 900 !important;
+    }
+
+    .back-to-top {
+        position: fixed;
+        display: none;
+        right: 45px;
+        bottom: 45px;
+        z-index: 99;
+    }
+
+
+    /*** Spinner ***/
+    #spinner {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .5s ease-out, visibility 0s linear .5s;
+        z-index: 99999;
+    }
+
+    #spinner.show {
+        transition: opacity .5s ease-out, visibility 0s linear 0s;
+        visibility: visible;
+        opacity: 1;
+    }
+
+
+    /*** Button ***/
+    .btn {
+        font-weight: 500;
+        transition: .5s;
+    }
+
+    .btn.btn-primary,
+    .btn.btn-secondary {
+        color: #FFFFFF;
+    }
+
+    .btn-square {
+        width: 38px;
+        height: 38px;
+    }
+
+    .btn-sm-square {
+        width: 32px;
+        height: 32px;
+    }
+
+    .btn-lg-square {
+        width: 48px;
+        height: 48px;
+    }
+
+    .btn-square,
+    .btn-sm-square,
+    .btn-lg-square {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: normal;
+    }
+
+    .team-item img {
+    position: relative;
+    top: 0;
+    transition: .5s;
+    }
+
+    .team-item:hover img {
+        top: -30px;
+    }
+
+    .team-item .team-text {
+        position: relative;
+        height: 100px;
+        transition: .5s;
+    }
+
+    .team-item:hover .team-text {
+        margin-top: -60px;
+        height: 160px;
+    }
+
+    .team-item .team-text .team-social {
+        opacity: 0;
+        transition: .5s;
+    }
+
+    .team-item:hover .team-text .team-social {
+        opacity: 1;
+    }
+
+    .team-item .team-social .btn {
+        display: inline-flex;
+        color: var(--primary);
+        background: #FFFFFF;
+        border-radius: 40px;
+    }
+
+    .team-item .team-social .btn:hover {
+        color: #FFFFFF;
+        background: var(--primary);
+    }
+
+
+    /*** Appointment ***/
+    .bootstrap-datetimepicker-widget.bottom {
+        top: auto !important;
+    }
+
+    .bootstrap-datetimepicker-widget .table * {
+        border-bottom-width: 0px;
+    }
+
+    .bootstrap-datetimepicker-widget .table th {
+        font-weight: 500;
+    }
+
+    /* .bootstrap-datetimepicker-widget.dropdown-menu {
+        padding: 10px;
+        border-radius: 2px;
+    } */
+
+    .bootstrap-datetimepicker-widget table td.active,
+    .bootstrap-datetimepicker-widget table td.active:hover {
+        background: var(--primary);
+    }
+
+    .bootstrap-datetimepicker-widget table td.today::before {
+        border-bottom-color: var(--primary);
+    }
+
+
+    /*** Testimonial ***/
+    .testimonial-carousel::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0;
+        background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+        z-index: 1;
+    }
+
+    .testimonial-carousel::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 0;
+        background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+        z-index: 1;
+    }
+
+    @media (min-width: 768px) {
+        .testimonial-carousel::before,
+        .testimonial-carousel::after {
+            width: 200px;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .testimonial-carousel::before,
+        .testimonial-carousel::after {
+            width: 300px;
+        }
+    }
+
+    .testimonial-carousel .owl-item .testimonial-text {
+        background: var(--light);
+        transform: scale(.8);
+        transition: .5s;
+    }
+
+    .testimonial-carousel .owl-item.center .testimonial-text {
+        background: var(--primary);
+        transform: scale(1);
+    }
+
+    .testimonial-carousel .owl-item .testimonial-text *,
+    .testimonial-carousel .owl-item .testimonial-item img {
+        transition: .5s;
+    }
+
+    .testimonial-carousel .owl-item.center .testimonial-text * {
+        color: var(--light) !important;
+    }
+
+    .testimonial-carousel .owl-item.center .testimonial-item img {
+        background: var(--primary) !important;
+    } 
+
+    .testimonial-carousel .owl-nav {
+        position: absolute;
+        width: 350px;
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: space-between;
+        opacity: 0;
+        transition: .5s;
+        z-index: 1;
+    }
+
+    .testimonial-carousel:hover .owl-nav {
+        width: 300px;
+        opacity: 1;
+    }
+
+    .testimonial-carousel .owl-nav .owl-prev,
+    .testimonial-carousel .owl-nav .owl-next {
+        position: relative;
+        color: var(--primary);
+        font-size: 45px;
+        transition: .5s;
+    }
+
+    .testimonial-carousel .owl-nav .owl-prev:hover,
+    .testimonial-carousel .owl-nav .owl-next:hover {
+        color: var(--dark);
+    }
+
+</style>

@@ -1,4 +1,32 @@
-<nav class="navbar navbar-expand-lg" style="background: #4CAF50; padding: 20px;" id="header"> <!-- Updated to match footer color -->
+
+<div class="container-fluid bg-light p-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="row gx-0 d-none d-lg-flex">
+            <div class="col-lg-7 px-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
+                    <small>187, Nguyễn Lương Bằng, Xã Đàn, Đống Đa, Hà Nội</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center py-3">
+                    <small class="far fa-clock text-primary me-2"></small>
+                    <small>Thứ 2 - Thứ 7 : 09.00 Sáng - 09.00 Tối</small>
+                </div>
+            </div>
+            <div class="col-lg-5 px-5 text-end">
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <small class="fa fa-phone-alt text-primary me-2"></small>
+                    <small>+012 345 6789</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center">
+                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-0" href=""><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+<nav class="navbar navbar-expand-lg" style="background: #007bff; padding: 20px;" id="header"> <!-- Updated to match footer color -->
+
     <div class="container-fluid">
         <a class="navbar-brand" href="/" style="color: white;">
             <div class="d-flex align-items-center">
@@ -13,13 +41,6 @@
             <ul class="navbar-nav ms-auto">
                 {{#ifEquals role "doctor"}}
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" aria-expanded="false">Chỉnh sửa</a>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="/chinh-sua/thuoc-dich-vu">Thuốc/Dịch vụ</a></li>
-                        <li><a class="dropdown-item" href="/chinh-sua/so-benh-nhan-toi-da">Số bệnh nhân tối đa trong ngày</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" aria-expanded="false">Thống kê</a>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="/bao-cao/benh">Bệnh</a></li>
@@ -28,8 +49,14 @@
                     </ul>
                 </li>
                 <a class="nav-link text-white" href="/tai-lieu/xuat-hoa-don">Lập phiếu khám bệnh</a>
+                <a class="nav-link text-white" href="/tai-lieu/danh-sach-kham-benh">Danh sách khám bệnh</a>
                 {{/ifEquals}}
-                <li class="nav-item dropdown">
+
+                {{#ifEquals role "patient"}}
+                    <a class="nav-link text-white" href="/tai-lieu/lap-phieu-hen">Đặt lịch hẹn</a>
+                {{/ifEquals}}
+
+                {{!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" aria-expanded="false">Tài liệu</a>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="/tai-lieu/xuat-hoa-don">Lập phiếu khám bệnh</a></li>
@@ -40,7 +67,7 @@
                         <li><a class="dropdown-item" href="/tai-lieu/lap-phieu-hen">Đặt lịch hẹn</a></li>
                         {{/ifEquals}}
                     </ul>
-                </li>
+                </li> --}}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" aria-expanded="false">Tìm kiếm</a>
                     <ul class="dropdown-menu dropdown-menu-end">

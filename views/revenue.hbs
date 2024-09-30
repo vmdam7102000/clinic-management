@@ -39,7 +39,7 @@
                         <th>Ngày nhập viện</th>
                         <th>Ngày xuất viện</th>
                         <th>Trạng thái bệnh</th>
-                        <th>Tiền Khám và thuốc</th>
+                        <th>Tiền Khám và thuốc (VND)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -50,7 +50,7 @@
                         <td>{{entry_date}}</td>
                         <td>{{discharge_date}}</td>
                         <td>{{medical_status}}</td>
-                        <td>{{AllTotal}}</td>
+                        <td class="salary">{{AllTotal}}</td>
                     </tr>
                     {{/each}}
                 </tbody>
@@ -67,12 +67,12 @@
             <table class="table table-hover">
                 <thead class="table-light">
                     <tr>
-                        <th>Tổng doanh thu</th>
+                        <th>Tổng doanh thu (VND)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>{{totalRevenue}}</td>
+                        <td class="salary">{{totalRevenue}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -92,6 +92,17 @@
         window.print();
         document.body.innerHTML = originalContents;
     }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get all salary elements
+        const salaryElements = document.querySelectorAll('.salary');
+
+        // Format each salary using toLocaleString
+        salaryElements.forEach(function (element) {
+            const salary = parseFloat(element.textContent);
+            if (!isNaN(salary)) {
+                element.textContent = salary.toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+            }
+        });
+    });
 </script>
-
-

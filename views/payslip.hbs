@@ -144,14 +144,14 @@
                     <tr>
                         <th>Tên bác sĩ</th>
                         <th>Số ca bệnh đã chữa khỏi</th>
-                        <th>Lương</th>
+                        <th>Lương (VND)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>{{DoctorName}}</td>
                         <td>{{totalPatients}}</td>
-                        <td>{{salary}}</td>
+                        <td class="salary">{{salary}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -163,6 +163,20 @@
 
 
 <script>
+
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get all salary elements
+        const salaryElements = document.querySelectorAll('.salary');
+
+        // Format each salary using toLocaleString
+        salaryElements.forEach(function (element) {
+            const salary = parseFloat(element.textContent);
+            if (!isNaN(salary)) {
+                element.textContent = salary.toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+            }
+        });
+    });
+
     function printDiv() {
         var printContents = document.getElementById("printableArea").innerHTML;
         var originalContents = document.body.innerHTML;
