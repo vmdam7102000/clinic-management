@@ -1,0 +1,118 @@
+
+
+<script>
+    function printDiv() {
+        var printContents = document.getElementById("printableArea").innerHTML;
+        var originalContents = document.body.innerHTML;
+
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
+</script>
+
+
+<!-- Print Button -->
+<div class="d-flex justify-content-end mb-2">
+    
+</div>
+
+<!-- Content to Print -->
+<div id="printableArea" class="container">
+
+    <h3 class="text-center my-4 display-6"><strong>Thông Tin Lương y tá</strong></h3>
+
+    <button type="button" class="btn btn-sm btn-outline-primary" id="btnPrint" onclick="printDiv()" >
+        <i class="fas fa-print"></i> In phiếu lương
+    </button>
+
+    <div style="padding-bottom: 30px;"></div>
+
+    {{#each records}}
+
+    <!-- Table 1: Patient Details -->
+    <div class="card mb-4 shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h5 class="card-title mb-0">Chi Tiết Ca Bệnh</h5>
+        </div>
+        <div class="card-body p-3">
+            <table class="table table-hover">
+                <thead class="table-light">
+                    <tr>
+                        <th>Tên bệnh nhân</th>
+                        <th>Chẩn đoán</th>
+                        <th>Ngày nhập viện</th>
+                        <th>Ngày xuất viện</th>
+                        <th>Trạng thái bệnh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each details}}
+                    <tr>
+                        <td>{{Name}}</td>
+                        <td>{{Diagnosis}}</td>
+                        <td>{{entry_date}}</td>
+                        <td>{{discharge_date}}</td>
+                        <td>{{medical_status}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Table 2: Doctor Information -->
+    <div class="card mb-4 shadow-sm">
+        <div class="card-header bg-info text-white">
+            <h5 class="card-title mb-0">Tổng lương</h5>
+        </div>
+        <div class="card-body p-3">
+            <table class="table table-hover">
+                <thead class="table-light">
+                    <tr>
+                        <th>Tên y </th>
+                        <th>Số ca bệnh tiếp nhận</th>
+                        <th>Lương (VND)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{nurseName}}</td>
+                        <td>{{totalPatients}}</td>
+                        <td class="salary">{{salary}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    {{/each}}
+</div>
+
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get all salary elements
+        const salaryElements = document.querySelectorAll('.salary');
+
+        // Format each salary using toLocaleString
+        salaryElements.forEach(function (element) {
+            const salary = parseFloat(element.textContent);
+            if (!isNaN(salary)) {
+                element.textContent = salary.toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+            }
+        });
+    });
+
+    function printDiv() {
+        var printContents = document.getElementById("printableArea").innerHTML;
+        var originalContents = document.body.innerHTML;
+
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
+</script>
+
+

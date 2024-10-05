@@ -1,5 +1,6 @@
 const DoctorsM = require('../model/Doctors.m');
 const UsersM = require('../model/Users.m');
+const NursesM = require('../model/Nurses.m');
 const DrugsM = require('../model/Drugs.m');
 const ServicesM = require('../model/Services.m');
 const RecordsM = require('../model/Records.m');
@@ -22,6 +23,7 @@ exports.createInvoice = async (req, res, next) => {
     }
     else {
         const patients = await UsersM.getAll();
+        const nurses = await NursesM.getAll();
         const doctor = await DoctorsM.getByUsername(req.session.Username);
         var today = new Date();
         var date=typeof today == "object" ? today.toLocaleDateString('vi-VN') : "";
@@ -35,7 +37,9 @@ exports.createInvoice = async (req, res, next) => {
             services[i].Quantity=1;
             drugs.push(services[i]);
         }
-        res.render('invoice', { patients: patients, doctor: doctor[0], today: today, drugs: drugs,date:date,time:time, display1:"d-none",display2:"d-block", role:"doctor"});
+        console.log(nurses);
+        console.log(patients);
+        res.render('invoice', { patients: patients, nurses: nurses, doctor: doctor[0], today: today, drugs: drugs,date:date,time:time, display1:"d-none",display2:"d-block", role:"doctor"});
     }
 }
 exports.UpdateInvoice = async (req, res, next) => {

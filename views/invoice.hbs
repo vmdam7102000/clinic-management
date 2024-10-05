@@ -23,7 +23,7 @@
                             <path
                                 d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" />
                         </svg>
-                        <p class="pt-0">PHÒNG KHÁM GROUP21</p>
+                        <p class="pt-0">PHÒNG KHÁM VMD</p>
                     </div>
 
                 </div>
@@ -70,8 +70,25 @@
                                 </div>
                                 <div class="col-auto">
                                     <input type="text" id="Res" class="form-control mx-sm-3 border-0" value="" name="Diagnosis" required>
+
+
+                                </div><div class="row g-3 align-items-center mb-auto">
+                                <div class="col-auto">  
+                                    <label for="NurseName">Y tá chăm sóc: </label>
                                 </div>
+                                <div class="col-auto">
+                                    <input type="text" list="nurses" id="NurseName" name="NurseName"  
+                                        class="form-control mx-sm-3 border-0" required>
+                                    <input type="text" id="NurseUsername" name="NurseUsername" class="d-none">
+                                </div>
+                                <datalist id="nurses">
+                                    {{#each nurses}}
+                                    <option value="{{Name}} ({{Username}})" data-nurseusername="{{Username}}" data-nursename="{{Name}}">{{Name}} ({{Username}})</option>
+                                    {{/each}}
+                                </datalist>
                             </div>
+                            </div>  
+
                         </form>
                     </div>
                     <div class="col-xl-4">
@@ -96,7 +113,7 @@
                                     <option value="đang điều trị">Đang điều trị</option>
                                     <option value="khỏi bệnh">Khỏi bệnh</option>
                                 </select>
-                            </li>
+                            </li>                    
 
                             <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i> <span
                                     class="fw-bold">Bác sĩ chẩn đoán: </span><span>{{doctor.Name}}</span></li>
@@ -153,3 +170,4 @@
         </div>
     </div>
 </div>
+

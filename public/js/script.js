@@ -228,6 +228,7 @@ $(function () {
             });
     })
     $('input[list="patients"]').on('input', onInput);
+    $('input[list="nurses"]').on('input', onInput3);
     $("#btnPrint").on("click", function () {
         console.log('print');
         const data = $("#printPDF").html();
@@ -411,6 +412,8 @@ function onInput(e) {
     list = input.getAttribute('list'),
         options = document.getElementById(list).childNodes;
 
+    console.log(options); 
+
     var ok = false;
 
     for (var i = 0; i < options.length; i++) {
@@ -433,6 +436,52 @@ function onInput(e) {
             // An item was selected from the list!
             // yourCallbackHere()
             //alert('item selected: ' + val);
+            ok = true;
+            break;
+        }
+    }
+    if (!ok) {
+        usernameProfile = "123";
+        NamePatient = val;
+    }
+}
+
+function onInput3(e) {
+    console.log('input1');
+    var input = e.target,
+        val = input.value;
+
+    console.log(val);
+    list = input.getAttribute('list'),
+        options = document.getElementById(list).childNodes;
+    console.log("hello");
+        // console.log(document.getElementById(list).childNodes);
+
+    var ok = false;
+
+    console.log(options); 
+
+    for (var i = 0; i < options.length; i++) {
+        if (options[i].innerText === val) {
+            console.log("match");
+            NurseUserName = options[i].getAttribute('data-nurseusername');
+            NurseName = options[i].getAttribute('data-nursename');
+
+            console.log(NurseUserName);
+            console.log(NurseName);
+            $('#NurseName').val(NurseName);
+            $('#NurseUsername').val(NurseUserName);
+            // $.post("/tai-lieu/xuat-hoa-don",
+            //     {
+            //         NurseUserName: options[i].getAttribute('data-nurseusername')
+            //     });
+            // An item was selected from the list!
+            // yourCallbackHere()
+            //alert('item selected: ' + val);
+            $.post("/tai-lieu/xuat-hoa-don",
+                {
+                    username: options[i].getAttribute('data-nurseusername')
+                });
             ok = true;
             break;
         }

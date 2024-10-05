@@ -126,6 +126,10 @@ app.get('/', async(req, res, next) => {
     let role="patient";
     if (req.session.Doctor) {
         role="doctor";
+    } else if (req.session.Nurse){
+        role="nurse";
+    } else if (req.session.Admin){
+        role="admin"
     }
     if (req.session.Username) {
         res.render('home', { display1: "d-none", display2: "d-block", doctors:doctors, role:role});

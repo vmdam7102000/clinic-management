@@ -33,11 +33,28 @@
                   {{#ifEquals role "patient"}}
                   <option value="patient" selected>Bệnh nhân</option>
                   <option value="doctor">Bác sĩ</option>
+                  <option value="nurse">Y tá</option>
+                  <option value="admin">Quản trị</option>
                   {{/ifEquals}}
                   {{#ifEquals role "doctor"}}
                   <option value="patient">Bệnh nhân</option>
                   <option value="doctor" selected>Bác sĩ</option>
+                  <option value="nurse">Y tá</option>
+                  <option value="admin">Quản trị</option>
                   {{/ifEquals}}
+                  {{#ifEquals role "nurse"}}
+                  <option value="patient">Bệnh nhân</option>
+                  <option value="doctor">Bác sĩ</option>
+                  <option value="nurse" selected>Y tá</option>
+                  <option value="admin">Quản trị</option>
+                  {{/ifEquals}}
+                  {{#ifEquals role "admin"}}
+                  <option value="patient">Bệnh nhân</option>
+                  <option value="doctor">Bác sĩ</option>
+                  <option value="nurse">Y tá</option>
+                  <option value="admin" selected>Quản trị</option>
+                  {{/ifEquals}}
+                  
                 </select>
               </div>
 
