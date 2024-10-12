@@ -49,7 +49,6 @@
                     </ul>
                 </li>
                 <a class="nav-link text-white" href="/tai-lieu/xuat-hoa-don">Lập phiếu khám bệnh</a>
-                <a class="nav-link text-white" href="/tai-lieu/danh-sach-kham-benh">Danh sách khám bệnh</a>
                 {{/ifEquals}}
 
                 {{#ifEquals role "nurse"}}
@@ -61,7 +60,30 @@
                     </ul>
                 </li>
                 <a class="nav-link text-white" href="/tai-lieu/xuat-hoa-don">Lập phiếu khám bệnh</a>
-                <a class="nav-link text-white" href="/tai-lieu/danh-sach-kham-benh">Danh sách khám bệnh</a>
+                {{/ifEquals}}
+
+
+                {{#ifEquals role "admin"}}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" aria-expanded="false">Thống kê</a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="/bao-cao/benh">Bệnh</a></li>
+                        <li><a class="dropdown-item" href="/bao-cao/luong-bacsi">Tiền lương</a></li>
+                        <li><a class="dropdown-item" href="/bao-cao/doanhthu">Doanh thu</a></li>
+                    </ul>
+                </li>
+
+
+                <a class="nav-link text-white" href="/admin/themthuoc">Chỉnh sửa thuốc/Dịch vụ</a>
+
+                <li class="nav-item dropdown">  
+                    <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" aria-expanded="false">Thêm tài khoản</a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="/admin/them-bacsi">Bác sĩ</a></li>
+                        <li><a class="dropdown-item" href="/admin/them-yta">Y tá</a></li>
+                    </ul>
+                </li>
+                
                 {{/ifEquals}}
 
                 {{#ifEquals role "patient"}}
@@ -80,6 +102,7 @@
                         {{/ifEquals}}
                     </ul>
                 </li> --}}
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" aria-expanded="false">Tìm kiếm</a>
                     <ul class="dropdown-menu dropdown-menu-end">

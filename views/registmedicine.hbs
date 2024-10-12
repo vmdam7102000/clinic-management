@@ -1,0 +1,55 @@
+<section>
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-8 col-xl-6">
+        <div class="card rounded-3">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Thêm thuốc/Dịch vụ mới</h3>
+
+            <form class="px-md-2" action="/admin/themthuoc" method="POST">
+              {{!-- Drugname input --}}
+              <div class="form-floating mb-4 form-floating">
+                <input type="text" id="name" class="form-control" name="Name" value="{{drug.Name}}" placeholder="Tên thuốc" required/>
+                <label class="form-label" for="name">Tên thuốc</label>
+              </div>
+
+              <p class="text-danger {{display}}">Username đã tồn tại</p>
+
+              <div class="form-floating mb-4 form-floating">
+                <input type="text" id="unit" class="form-control" name="Unit" value="{{drug.Unit}}" placeholder="Đơn vị" required/>
+                <label class="form-label" for="unit">Đơn vị</label>
+              </div>
+
+              <div class="form-floating mb-4 form-floating">
+                <input type="text" id="price" class="form-control" name="Price" value="{{drug.Price}}" placeholder="Giá" required/>
+                <label class="form-label" for="price">Giá</label>
+              </div>
+
+              <div class="form-floating mb-4 form-floating">
+                <input type="text" id="cuantity" class="form-control" name="Quantity" value="{{drug.Quantity}}" placeholder="Số lượng" />
+                <label class="form-label" for="quantity">Số lượng</label>
+              </div>
+
+              <div class="form-floating mb-4 form-floating">
+                <input type="text" id="chemicals" class="form-control" name="Chemicals" value="{{drug.Chemicals}}" placeholder="Thành phần" />
+                <label class="form-label" for="chemicals">Thành phần</label>
+              </div>
+
+
+              <div class="form-floating mb-4 form-floating">
+                <input type="text" id="uses" class="form-control" name="Uses" value="{{drug.Uses}}" placeholder="Công dụng" />
+                <label class="form-label" for="uses">Công dụng</label>
+              </div>
+
+              {{!-- Button submit --}}
+              <button type="submit" class="btn btn-success btn-lg mb-4">Thêm</button>
+
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

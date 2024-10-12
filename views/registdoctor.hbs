@@ -1,0 +1,117 @@
+<section>
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-8 col-xl-6">
+        <div class="card rounded-3">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Tạo tài khoản bác sĩ</h3>
+
+            <form class="px-md-2" action="/admin/them-bacsi" method="POST">
+              {{!-- Username input --}}
+              <div class="form-floating mb-4 form-floating">
+                <input type="text" id="username" class="form-control" name="Username" value="{{doctor.Username}}" placeholder="Username" required/>
+                <label class="form-label" for="username">Username</label>
+              </div>
+
+              <p class="text-danger {{display}}">Username đã tồn tại</p>
+
+              {{!-- Password input --}}
+              <div class="form-floating mb-4 form-floating">
+                <input type="password" id="password" class="form-control" name="Password" value="{{doctor.Password}}" placeholder="Mật khẩu" required/>
+                <label class="form-label" for="password">Mật khẩu</label>
+              </div>
+
+              {{!-- Confirm password input --}}
+              <div class="form-floating mb-4 form-floating">
+                <input type="password" id="retype_password" class="form-control" name="Retype" value="{{doctor.Retype}}" placeholder="Xác nhận mật khẩu" required/>
+                <label class="form-label" for="retype_password">Xác nhận mật khẩu</label>
+              </div>
+
+              {{!-- Name input --}}
+              <div class="form-floating mb-4 form-floating"> 
+                <input type="text" id="name" class="form-control" name="Name" value="{{doctor.Name}}" placeholder="Họ và tên" required/>
+                <label class="form-label" for="name">Họ và tên</label>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mt-2 mb-2">
+                  {{!-- Date of birth input --}}
+                  <div class="form-floating datepicker form-floating">
+                    <input type="date" class="form-control" id="date-of-birth" name="DOB" value="{{doctor.DOB}}" required/>
+                    <label for="date-of-birth" class="form-label">Ngày sinh</label>
+                  </div>
+
+                </div>
+                <div class="col-md-4 mb-4">
+                    {{!-- Sex input --}}
+                    <label class="form-label" for="sex">Giới tính</label>
+                    <div class="d-flex">
+                        <input class="form-check-input" type="radio" name="Gender" id="male" value="Nam">
+                        <label style="margin-left: 4px;" class="form-check-label" for="male">
+                        Nam
+                        <input style="margin-left: 20px;" class="form-check-input" type="radio" name="Gender" id="female" value="Nữ">
+                        <label class="form-check-label" for="female">
+                        Nữ
+                    </div>
+                </div>
+              </div>
+              
+              {{!-- Phone number input --}}
+              <div class="form-floating mb-4 form-floating">
+                <input type="text" id="phone-number" class="form-control" name="Phone" value="{{doctor.Phone}}" placeholder="Số điện thoại" required/>
+                <label class="form-label" for="phone-number">Số điện thoại</label>
+              </div>
+
+              {{!-- Email input --}}
+              <div class="form-floating mb-4 form-floating">
+                <input type="email" id="email" class="form-control" name="Email" value="{{doctor.Email}}" placeholder="Email"/>
+                <label class="form-label" for="email">Email</label>
+              </div>
+
+              {{!-- Address input --}}
+              <div class="form-floating mb-4 form-floating">
+                <input type="text" id="address" class="form-control" name="Address" value="{{doctor.Address}}" placeholder="Địa chỉ" required/>
+                <label class="form-label" for="address">Địa chỉ</label>
+              </div>
+
+              {{!-- Idnumber input --}}
+              <div class="form-floating mb-4 form-floating">
+                <input type="text" id="idnumber" class="form-control" name="Idnumber" value="{{doctor.Idnumber}}" placeholder="Số căn cước/Chứng minh thư" required/>
+                <label class="form-label" for="idnumber">Số căn cước/Chứng minh thư</label>
+              </div>
+
+              {{!-- Joblevel input --}}
+              <div class="form-floating mb-4 form-floating">
+                <input type="text" id="joblevel" class="form-control" name="Joblevel" value="{{doctor.Joblevel}}" placeholder="Cấp bậc" required/>
+                <label class="form-label" for="Joblevel">Cấp bậc</label>
+              </div>
+
+              {{!-- qualification input --}}
+              <div class="form-floating mb-4 form-floating">
+                <input type="text" id="qualification" class="form-control" name="Qualification" value="{{doctor.Qualification}}" placeholder="Trình độ" required/>
+                <label class="form-label" for="qualification">Trình độ</label>
+              </div>
+
+              {{!-- qualification input --}}
+              <div class="form-floating mb-4 form-floating">
+                <input type="text" id="specialty" class="form-control" name="Specialty" value="{{doctor.Specialty}}" placeholder="Chuyên môn" required/>
+                <label class="form-label" for="specialty">Chuyên môn</label>
+              </div>
+
+              <div class="form-floating mb-4 form-floating">
+                <input type="text" id="yoe" class="form-control" name="YOE" value="{{doctor.YOE}}" placeholder="số năm kinh nghiệm" required/>
+                <label class="form-label" for="YOE">số năm kinh nghiệm</label>
+              </div>
+
+              {{!-- Button submit --}}
+              <button type="submit" class="btn btn-success btn-lg mb-4">Thêm</button>
+
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

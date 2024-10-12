@@ -86,10 +86,6 @@ $(function () {
             {
                 extend: 'pdf',
                 text: 'Xuất PDF' // Renaming the PDF export button
-            },
-            {
-                extend: 'colvis',
-                text: 'Lọc Cột' // Renaming the Column visibility button
             }
         ],
         language: {
@@ -114,10 +110,6 @@ $(function () {
             {
                 extend: 'pdf',
                 text: 'Xuất PDF' // Renaming the PDF export button
-            },
-            {
-                extend: 'colvis',
-                text: 'Lọc Cột' // Renaming the Column visibility button
             }
         ],
         language: {

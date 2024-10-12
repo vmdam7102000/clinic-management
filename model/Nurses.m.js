@@ -19,7 +19,29 @@ module.exports = {
     update: async(user,data) => {
         await db.collection('Nurses').updateOne({Username:user},{$set:data},{upsert:true});
     },
-    getNurseSalariesWithDetails : async (month, year) => {
+    getMaxID: async()=>{
+        const rs=await db.collection('Nurses').find({}).sort("ID",-1).limit(1).toArray();
+        return rs;
+    },
+    add: async (data) => {
+        const rs = await db.collection('Nurses').insertOne({
+            Username: data.Username,
+            Password: data.Password,
+            Name: data.Name,
+            DOB: data.DOB,
+            Gender: data.Gender,
+            Phone: data.Phone,
+            Email: data.Email,
+            Address: data.Address,
+            Qualification: data.Qualification,
+            Specialty: data.Specialty,
+            YOE: data.YOE,
+            Idnumber: data.Idnumber,
+            ID: data.ID
+        });
+        return rs;
+    },
+    getNurseSalariesWithDetails : async (month, year, username) => {
         const rs = await db.collection('MedicalHistory').aggregate([
             {
                 // Extract month and year from 'discharge_date' and keep the relevant fields
@@ -37,15 +59,14 @@ module.exports = {
                 }
             },
             {
-                // Filter records by 'khỏi bệnh' and the given month and year
                 $match: {
-                    NurseUsername: { $ne: null },
+                    NurseUsername: username,
                     month: month.toString(),       // Match the given month
                     year: year.toString()          // Match the given year
                 }
             },
             {
-                // Group by DoctorID and DoctorName, collect MedicalHistory details for each doctor
+                // Group by Nurse username and Nurse name, collect MedicalHistory details for each doctor
                 $group: {
                     _id: { NurseUsername: "$NurseUsername", NurseName: "$NurseName" },
                     recoveredPatients: { $sum: 1 },  // Count the number of recovered patients
@@ -62,7 +83,7 @@ module.exports = {
                 }
             },
             {
-                // Calculate the salary: base salary + 1,000,000 VND for each recovered patient
+                // Calculate the salary: base salary + 2000,000 VND for each supported patient
                 $project: {
                     _id: 0,
                     NurseUsername: "$_id.NurseUsername",
@@ -71,7 +92,7 @@ module.exports = {
                     salary: { 
                         $add: [
                             5000000,                     // Base salary
-                            { $multiply: [200000, "$recoveredPatients"] } // Bonus for recovered patients
+                            { $multiply: [200000, "$recoveredPatients"] } // Bonus for supported patients
                         ]
                     },
                     details: 1                         // Include the MedicalHistory details

@@ -32,11 +32,11 @@ const ProfileRouter=require('./routers/profile.r');
 const DetailDoctorRouter=require('./routers/detail-doctor.r');
 const DocumentRouter=require('./routers/doc.r');
 const EditRouter=require('./routers/edit.r');
+const adminRouter=require('./routers/admin.r')
 
 //damvm thêm thống kê
 const ReportRouter=require('./routers/report.r');
-
-const doctorM=require('./model/Doctors.m');
+const doctorM=require('./model/Doctors.m'); 
 
 //Use static resources
 app.use(express.static(path.join(__dirname, '/public')))
@@ -116,6 +116,7 @@ app.use('/tai-khoan',ProfileRouter);
 app.use('/bac-si',DetailDoctorRouter);
 app.use('/tai-lieu',DocumentRouter);
 app.use('/chinh-sua',EditRouter);
+app.use('/admin',adminRouter);
 
 //damvm them bao cao
 app.use('/bao-cao', ReportRouter);

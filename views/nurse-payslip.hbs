@@ -1,4 +1,21 @@
 
+<!-- Form to select month and year -->
+<div class="d-flex justify-content-center pt-4 mb-2">
+    <form id="formLuongBacSi" method="get" action="/bao-cao/luong-yta">
+        <div class="form-group d-inline-block me-2">
+            <label for="month">Tháng:</label>
+            <input type="number" id="month" name="month" min="1" max="12" class="form-control form-control-sm" required>
+        </div>
+        <div class="form-group d-inline-block me-2">
+            <label for="year">Năm:</label>
+            <input type="number" id="year" name="year" min="2000" class="form-control form-control-sm" required>
+        </div>
+        <input type="hidden" id="doctorID" name="doctorID" value={{session.Name}}>
+        <button type="submit" class="btn btn-sm btn-outline-primary">
+            Lọc
+        </button>
+    </form>
+</div>
 
 <script>
     function printDiv() {

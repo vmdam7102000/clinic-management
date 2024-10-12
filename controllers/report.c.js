@@ -4,6 +4,7 @@ const nursesM = require('../model/Nurses.m');
 const DoctorsM = require('../model/Doctors.m');
 const DrugsM = require('../model/Drugs.m');
 const RevenueM = require('../model/Revenue.m');
+const session = require('express-session');
 
 String.prototype.replaceAt = function (index, replacement) {
     return this.substring(0, index) + replacement + this.substring(index + replacement.length);
@@ -12,26 +13,41 @@ String.prototype.replaceAt = function (index, replacement) {
 
 exports.getDiseases = async (req, res, next) => {
 
-        const rs = await medicalRecordM.getDiseases('09','2024');
-        console.log(rs);
+    const month = req.query.month || '00';
+    const year = req.query.year || '00';
 
-        res.render('patientRecord', { records: rs, display1:"d-none",display2:"d-block", role:"doctor"});
+    console.log(month);
+    console.log(year);
+    const rs = await medicalRecordM.getDiseases(month,year);
+    console.log(rs);
+
+    res.render('patientRecord', { records: rs, display1:"d-none",display2:"d-block", role:"doctor"});
 
 }
 
 
 exports.getDoctorPayslip = async (req, res, next) => {
 
-        const rs = await DoctorsM.getDoctorSalariesWithDetails('09','2024');
-        console.log(rs);
+    const month = req.query.month || '00';
+    const year = req.query.year || '00';
+    const docid = req.session.Id;
+    const rs = await DoctorsM.getDoctorSalariesWithDetails(month,year,docid);
+    console.log(rs);
 
-        res.render('doctor-payslip', { records: rs, display1:"d-none",display2:"d-block", role:"doctor"});
+    res.render('doctor-payslip', { records: rs, display1:"d-none",display2:"d-block", role:"doctor"});
 
 }
 
 exports.getNursePayslip = async (req, res, next) => {
 
-    const rs = await nursesM.getNurseSalariesWithDetails('10','2024');
+    const month = req.query.month || '00';
+    const year = req.query.year || '00';
+    const username = req.session.Username;
+
+    console.log("hello");
+    console.log(username);
+
+    const rs = await nursesM.getNurseSalariesWithDetails(month,year,username);
     console.log(rs);
 
     res.render('nurse-payslip', { records: rs, display1:"d-none",display2:"d-block", role:"doctor"});
@@ -41,7 +57,10 @@ exports.getNursePayslip = async (req, res, next) => {
 
 exports.getRevenue = async (req, res, next) => {
 
-    const rs = await RevenueM.getRevenueWithDetails('09','2024');
+    const month = req.query.month || '00';
+    const year = req.query.year || '00';
+
+    const rs = await RevenueM.getRevenueWithDetails(month,year);
     console.log(rs);
 
     res.render('revenue', { records: rs, display1:"d-none",display2:"d-block", role:"doctor"});

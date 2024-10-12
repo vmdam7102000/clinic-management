@@ -1,7 +1,9 @@
 const userM = require('../model/Users.m');
 const doctorM=require('../model/Doctors.m');
 const nurseM=require('../model/Nurses.m');
+const adminM=require('../model/Admin.m');
 const CryptoJS = require('crypto-js');
+const AdminM = require('../model/Admin.m');
 const hashLength = 64;
 exports.render = async (req, res, next) => {
     try {
@@ -45,6 +47,8 @@ exports.check = async (req, res, next) => {
                         res.render('login', { errWrongPassword: "block", errWrongUsername: "none", Username: user.Username, Password: user.Password, display1: "d-block", display2: "d-none", role: user.role });
                         return false;
                     }
+                    req.session.Id =rs[0].ID;
+                    console.log(req.session.Id);
                     req.session.Username = rs[0].Username;
                     req.session.Name=rs[0].Name;
                     req.session.Doctor=true;
@@ -69,6 +73,27 @@ exports.check = async (req, res, next) => {
                     req.session.Nurse=true;
 
                     console.log(req.session.Nurse);
+                    res.redirect('/');
+                    return true;
+                }
+            })
+        } else if (user.role == "admin") {
+            console.log(user.role);
+            AdminM.getByUsername(user.Username).then(rs => {
+                if (rs.length == 0) {
+                    res.render('login', { errWrongPassword: "none", errWrongUsername: "block", Username: user.Username, Password: user.Password, display1: "d-block", display2: "d-none", role: "admin" });
+                    return false;
+                }
+                else {
+                    if (rs[0].Password !== user.Password) {
+                        res.render('login', { errWrongPassword: "block", errWrongUsername: "none", Username: user.Username, Password: user.Password, display1: "d-block", display2: "d-none", role: "admin" });
+                        return false;
+                    }
+                    req.session.Username = rs[0].Username;
+                    req.session.Name=rs[0].Name;
+                    req.session.Admin=true;
+
+                    console.log(req.session.Admin);
                     res.redirect('/');
                     return true;
                 }

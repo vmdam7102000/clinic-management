@@ -31,29 +31,29 @@
                                 {{!-- Name input auto --}}
                                 <div class="col-12 col-sm-6 text-start">
                                     <label class="form-label text-black" for="name">Họ và tên &#8727;</label>
-                                    <input type="text" id="name" class="form-control bg-light" name="Name" value="{{user.Name}}" required>
+                                    <input type="text" id="name" class="form-control bg-light" name="Patient_Name" value="{{user.Name}}" required>
                                 </div>
 
-                                <input class="d-none" name="Username" type="text" value="{{user.Username}}">
+                                <input class="d-none" name="Patient_Username" type="text" value="{{user.Username}}">
 
                                 {{!-- Phone input auto --}}
                                 <div class="col-12 col-sm-6 text-start">
                                     <label class="form-label text-black" for="phone-number">Số điện thoại &#8727;</label>
-                                    <input type="tel" id="phone-number" pattern="((09|03|07|08|05)[0-9]{8})|(02[0-9]{9})" class="form-control bg-light" name="Phone"
+                                    <input type="tel" id="phone-number" pattern="((09|03|07|08|05)[0-9]{8})|(02[0-9]{9})" class="form-control bg-light" name="Patient_Phone"
                                         value="{{user.Phone}}" required>
                                 </div>
 
                                 {{!-- Email input auto --}}
-                                <div class="col-sm-12 text-start">
+                                {{!-- <div class="col-sm-12 text-start">
                                     <label class="form-label text-black" for="email">Email</label>
                                     <input type="email" id="email" class="form-control bg-light" name="Email" value="{{user.Email}}">
-                                </div>
+                                </div> --}}
 
                                 {{!-- Date of birth input --}}
                                 <div class="col-12 col-sm-6 text-start">
                                     <label for="date-of-birth" class="form-label text-black">Ngày sinh &#8727;</label>
                                     <input type="date" class="form-control datetimepicker-input bg-light"
-                                        id="date-of-birth" name="DOB" value="{{user.DOB}}" required>
+                                        id="date-of-birth" name="Patient_DOB" value="{{user.DOB}}" required>
                                 </div>
 
                                 {{!-- Sex input --}}
@@ -73,7 +73,7 @@
                                 </div>
 
                                 {{!-- Time appointment --}}
-                                <div class="col-12 col-sm-4 text-start">
+                                {{!-- <div class="col-12 col-sm-4 text-start">
                                     <label for="time-meet" class="form-label text-black">Ngày hẹn &#8727;</label>
                                     <input type="date" class="form-control datetimepicker-input bg-light" id="date-meet"
                                         name="Date" required>
@@ -82,7 +82,13 @@
                                     <label for="time-meet" class="form-label text-black">Giờ hẹn &#8727;</label>
                                     <input type="time" class="form-control datetimepicker-input bg-light" id="time-meet"
                                         name="Time" required>
+                                </div> --}}
+
+                                <div class="col-12 col-sm-8 text-start">
+                                    <label for="datetime-meet" class="form-label text-black">Ngày giờ hẹn &#8727;</label>
+                                    <input type="datetime-local" class="form-control bg-light" id="datetime-meet" name="Datetime" required>
                                 </div>
+
                                 <div class="col-sm-2"></div>
                                 {{!-- Confirm --}}
                                 <div class="col-sm-6">

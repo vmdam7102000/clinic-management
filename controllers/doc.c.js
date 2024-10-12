@@ -8,6 +8,7 @@ const AppointmentM = require('../model/Appointment.m');
 const PatientsInDayM = require('../model/PatientsInDay.m');
 const RevenueM = require('../model/Revenue.m');
 const DrugReportM = require('../model/Drug-Report.m');
+
 exports.createInvoice = async (req, res, next) => {
     let role = "patient";
     if (req.session.Doctor) {
@@ -42,6 +43,8 @@ exports.createInvoice = async (req, res, next) => {
         res.render('invoice', { patients: patients, nurses: nurses, doctor: doctor[0], today: today, drugs: drugs,date:date,time:time, display1:"d-none",display2:"d-block", role:"doctor"});
     }
 }
+
+
 exports.UpdateInvoice = async (req, res, next) => {
     const data = req.body;
     const user = await UsersM.getByUsername(data.username);

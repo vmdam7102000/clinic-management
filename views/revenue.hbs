@@ -1,4 +1,21 @@
 <!-- Content to Print -->
+<div class="d-flex justify-content-center pt-4 mb-2">
+    <form id="formLuongBacSi" method="get" action="/bao-cao/doanhthu">
+        <div class="form-group d-inline-block me-2">
+            <label for="month">Tháng:</label>
+            <input type="number" id="month" name="month" min="1" max="12" class="form-control form-control-sm" required>
+        </div>
+        <div class="form-group d-inline-block me-2">
+            <label for="year">Năm:</label>
+            <input type="number" id="year" name="year" min="2000" class="form-control form-control-sm" required>
+        </div>
+        <button type="submit" class="btn btn-sm btn-outline-primary">
+            Lọc
+        </button>
+    </form>
+</div>
+
+
 <div id="printableArea" class="container">
 
     <h3 class="text-center my-4 display-6"><strong>Thống kê doanh thu phòng khám</strong></h3>
@@ -9,19 +26,7 @@
 
     <div style="padding-bottom: 30px;"></div>
 
-    {{!-- <div class="row my-3">
-        <div class="col-md-4">
-            <label for="monthInput" class="form-label">Tháng:</label>
-            <input type="number" id="monthInput" class="form-control" placeholder="Nhập tháng (1-12)" min="1" max="12">
-        </div>
-        <div class="col-md-4">
-            <label for="yearInput" class="form-label">Năm:</label>
-            <input type="number" id="yearInput" class="form-control" placeholder="Nhập năm" min="1900">
-        </div>
-        <div class="col-md-4">
-            <button type="button" class="btn btn-primary mt-4" onclick="fetchRevenue()">Xem doanh thu</button>
-        </div>
-    </div> --}}
+
 
     {{#each records}}
 

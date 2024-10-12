@@ -16,8 +16,32 @@ module.exports = {
         const rs=await db.collection('Doctors').find({Username:Username}).toArray();
         return rs;
     },
+    getMaxID: async()=>{
+        const rs=await db.collection('Doctors').find({}).sort("ID",-1).limit(1).toArray();
+        return rs;
+    },
     update: async(user,data) => {
         await db.collection('Doctors').updateOne({Username:user},{$set:data},{upsert:true});
+    },
+    
+    add: async (data) => {
+        const rs = await db.collection('Doctors').insertOne({
+            Username: data.Username,
+            Password: data.Password,
+            Name: data.Name,
+            DOB: data.DOB,
+            Gender: data.Gender,
+            Phone: data.Phone,
+            Email: data.Email,
+            Address: data.Address,
+            Joblevel: data.Joblevel,
+            Qualification: data.Qualification,
+            Specialty: data.Specialty,
+            YOE: data.YOE,
+            Idnumber: data.Idnumber,
+            ID: data.ID
+        });
+        return rs;
     },
 
     getDoctorSalaries : async (month, year) => {
@@ -36,6 +60,7 @@ module.exports = {
             {
                 // Filter records by 'khỏi bệnh' and the given month and year
                 $match: {
+                    
                     medical_status: "khỏi bệnh",   // Patients recovered
                     month: month.toString(),       // Match the given month
                     year: year.toString()          // Match the given year
@@ -67,7 +92,7 @@ module.exports = {
         return rs;
     },
 
-    getDoctorSalariesWithDetails : async (month, year) => {
+    getDoctorSalariesWithDetails : async (month, year, docid) => {
         const rs = await db.collection('MedicalHistory').aggregate([
             {
                 // Extract month and year from 'discharge_date' and keep the relevant fields
@@ -87,6 +112,7 @@ module.exports = {
             {
                 // Filter records by 'khỏi bệnh' and the given month and year
                 $match: {
+                    DoctorID: docid,
                     medical_status: "khỏi bệnh",   // Patients recovered
                     month: month.toString(),       // Match the given month
                     year: year.toString()          // Match the given year

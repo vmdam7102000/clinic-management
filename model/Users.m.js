@@ -1,4 +1,4 @@
-const { db } = require('../model/Database.m');
+const { db } = require('./Database.m');
 module.exports = {
     add: async (data) => {
         const rs = await db.collection('Users').insertOne({
@@ -10,6 +10,7 @@ module.exports = {
             Phone: data.Phone,
             Email: data.Email,
             Address: data.Address,
+            Idnumber: data.Idnumber,
             ID: data.ID
         });
         return rs;
