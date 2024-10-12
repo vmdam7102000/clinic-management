@@ -31,10 +31,17 @@ exports.getDoctorPayslip = async (req, res, next) => {
     const month = req.query.month || '00';
     const year = req.query.year || '00';
     const docid = req.session.Id;
+    if(req.session.Admin !== null){
     const rs = await DoctorsM.getDoctorSalariesWithDetails(month,year,docid);
     console.log(rs);
-
     res.render('doctor-payslip', { records: rs, display1:"d-none",display2:"d-block", role:"doctor"});
+    }else {
+    const rs = await DoctorsM.getDoctorSalariesWithDetails(month,year,docid);
+    console.log(rs); 
+    res.render('doctor-payslip', { records: rs, display1:"d-none",display2:"d-block", role:"admin"});
+    }
+
+    
 
 }
 
@@ -47,10 +54,18 @@ exports.getNursePayslip = async (req, res, next) => {
     console.log("hello");
     console.log(username);
 
-    const rs = await nursesM.getNurseSalariesWithDetails(month,year,username);
+    if(req.session.Admin !== null){
+    console.log(req.session.Admin);
+    const rs = await nursesM.getNurseSalariesByNWithDetails(month,year,username);
     console.log(rs);
+    res.render('nurse-payslip', { records: rs, display1:"d-none",display2:"d-block", role:"nurse"});
+    }else{
+    const rs = await nursesM.getNurseSalariesWithDetails(month,year);
+    console.log(rs);
+    res.render('nurse-payslip', { records: rs, display1:"d-none",display2:"d-block", role:"admin"});
+    }
 
-    res.render('nurse-payslip', { records: rs, display1:"d-none",display2:"d-block", role:"doctor"});
+    
 
 }
 
